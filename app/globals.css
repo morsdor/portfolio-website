@@ -4,76 +4,76 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color tokens to match design brief with cyan primary and lime accent */
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.35 0 0);
-  --card: oklch(0.98 0 0);
-  --card-foreground: oklch(0.25 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.25 0 0);
-  --primary: oklch(0.55 0.15 200);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.75 0.2 120);
-  --secondary-foreground: oklch(1 0 0);
-  --muted: oklch(0.98 0 0);
-  --muted-foreground: oklch(0.35 0 0);
-  --accent: oklch(0.75 0.2 120);
-  --accent-foreground: oklch(1 0 0);
+  /* Updated to Spotify-inspired color palette with green accents */
+  --background: oklch(0.98 0 0);
+  --foreground: oklch(0.15 0 0);
+  --card: oklch(0.96 0 0);
+  --card-foreground: oklch(0.15 0 0);
+  --popover: oklch(0.98 0 0);
+  --popover-foreground: oklch(0.15 0 0);
+  --primary: oklch(0.55 0.18 142); /* Spotify green */
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.45 0.15 142); /* Darker green */
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.94 0 0);
+  --muted-foreground: oklch(0.45 0 0);
+  --accent: oklch(0.6 0.2 142); /* Bright green accent */
+  --accent-foreground: oklch(0.98 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.92 0 0);
-  --input: oklch(0.98 0 0);
-  --ring: oklch(0.55 0.15 200 / 0.5);
-  --chart-1: oklch(0.6 0.2 270);
-  --chart-2: oklch(0.7 0.2 60);
-  --chart-3: oklch(0.65 0.2 160);
-  --chart-4: oklch(0.65 0.2 320);
-  --chart-5: oklch(0.6 0.2 220);
+  --border: oklch(0.9 0 0);
+  --input: oklch(0.96 0 0);
+  --ring: oklch(0.55 0.18 142 / 0.5);
+  --chart-1: oklch(0.55 0.18 142);
+  --chart-2: oklch(0.45 0.15 142);
+  --chart-3: oklch(0.6 0.2 142);
+  --chart-4: oklch(0.5 0.16 142);
+  --chart-5: oklch(0.65 0.22 142);
   --radius: 0.5rem;
-  --sidebar: oklch(0.98 0 0);
-  --sidebar-foreground: oklch(0.25 0 0);
-  --sidebar-primary: oklch(0.55 0.15 200);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.75 0.2 120);
-  --sidebar-accent-foreground: oklch(1 0 0);
-  --sidebar-border: oklch(0.92 0 0);
-  --sidebar-ring: oklch(0.55 0.15 200 / 0.5);
+  --sidebar: oklch(0.96 0 0);
+  --sidebar-foreground: oklch(0.15 0 0);
+  --sidebar-primary: oklch(0.55 0.18 142);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.6 0.2 142);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.9 0 0);
+  --sidebar-ring: oklch(0.55 0.18 142 / 0.5);
 }
 
 .dark {
-  /* Updated dark mode tokens to maintain contrast and design consistency */
-  --background: oklch(0.08 0 0);
+  /* Updated dark mode with Spotify-inspired dark theme and green accents */
+  --background: oklch(0.08 0 0); /* Very dark background like Spotify */
   --foreground: oklch(0.95 0 0);
-  --card: oklch(0.12 0 0);
+  --card: oklch(0.12 0 0); /* Dark cards */
   --card-foreground: oklch(0.95 0 0);
   --popover: oklch(0.08 0 0);
   --popover-foreground: oklch(0.95 0 0);
-  --primary: oklch(0.65 0.15 200);
+  --primary: oklch(0.65 0.2 142); /* Bright Spotify green */
   --primary-foreground: oklch(0.08 0 0);
-  --secondary: oklch(0.8 0.2 120);
+  --secondary: oklch(0.55 0.18 142); /* Medium green */
   --secondary-foreground: oklch(0.08 0 0);
   --muted: oklch(0.15 0 0);
   --muted-foreground: oklch(0.65 0 0);
-  --accent: oklch(0.8 0.2 120);
+  --accent: oklch(0.7 0.22 142); /* Vibrant green accent */
   --accent-foreground: oklch(0.08 0 0);
   --destructive: oklch(0.6 0.2 25);
   --destructive-foreground: oklch(0.95 0 0);
   --border: oklch(0.2 0 0);
   --input: oklch(0.15 0 0);
-  --ring: oklch(0.65 0.15 200 / 0.5);
-  --chart-1: oklch(0.7 0.2 270);
-  --chart-2: oklch(0.8 0.2 60);
-  --chart-3: oklch(0.75 0.2 160);
-  --chart-4: oklch(0.75 0.2 320);
-  --chart-5: oklch(0.7 0.2 220);
+  --ring: oklch(0.65 0.2 142 / 0.5);
+  --chart-1: oklch(0.65 0.2 142);
+  --chart-2: oklch(0.55 0.18 142);
+  --chart-3: oklch(0.7 0.22 142);
+  --chart-4: oklch(0.6 0.19 142);
+  --chart-5: oklch(0.75 0.24 142);
   --sidebar: oklch(0.1 0 0);
   --sidebar-foreground: oklch(0.95 0 0);
-  --sidebar-primary: oklch(0.65 0.15 200);
+  --sidebar-primary: oklch(0.65 0.2 142);
   --sidebar-primary-foreground: oklch(0.08 0 0);
-  --sidebar-accent: oklch(0.8 0.2 120);
+  --sidebar-accent: oklch(0.7 0.22 142);
   --sidebar-accent-foreground: oklch(0.08 0 0);
   --sidebar-border: oklch(0.2 0 0);
-  --sidebar-ring: oklch(0.65 0.15 200 / 0.5);
+  --sidebar-ring: oklch(0.65 0.2 142 / 0.5);
 }
 
 @theme inline {
@@ -143,10 +143,10 @@
 @keyframes pulse-glow {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(29, 185, 84, 0.3);
   }
   50% {
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+    box-shadow: 0 0 30px rgba(29, 185, 84, 0.6);
   }
 }
 

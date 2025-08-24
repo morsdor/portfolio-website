@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { ArrowLeft, ExternalLink, Play, Code2, Accessibility, Zap, Users } from "lucide-react"
+import { ArrowLeft, ExternalLink, Play, Code2, Accessibility, Zap, Users } from 'lucide-react'
 import Link from "next/link"
 
 export default function ReactComponentsPage() {
@@ -318,16 +318,20 @@ A comprehensive React component library showcasing 14 advanced components includ
       <section className="py-16 px-6 border-t border-border">
         <div className="container mx-auto max-w-4xl">
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8">
-              <ExternalLink className="mr-2 h-5 w-5" />
-              View Live Demo
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 bg-transparent">
-              <Code2 className="mr-2 h-5 w-5" />
-              View Source Code
+            <Button size="lg" className="text-lg px-8" asChild>
+              <Link href="https://github.com/morsdor/react-components" target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="mr-2 h-5 w-5" />
+                View Live Demo
+              </Link>
             </Button>
             <Button variant="outline" size="lg" className="text-lg px-8 bg-transparent" asChild>
-              <Link href="/projects/react-components/design">
+              <Link href="https://github.com/morsdor/react-components" target="_blank" rel="noopener noreferrer">
+                <Code2 className="mr-2 h-5 w-5" />
+                View Source Code
+              </Link>
+            </Button>
+            <Button variant="outline" size="lg" className="text-lg px-8 bg-transparent" asChild>
+              <Link href="https://github.com/morsdor/react-components/blob/main/design.md" target="_blank" rel="noopener noreferrer">
                 <Code2 className="mr-2 h-5 w-5" />
                 View Design Document
               </Link>
