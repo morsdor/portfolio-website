@@ -1,3 +1,5 @@
+"use client"
+
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -11,13 +13,20 @@ import {
   Users,
   Download,
   Mail,
-  Phone,
   MapPin,
   Linkedin,
 } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function HomePage() {
+  const scrollToProjects = () => {
+    document.getElementById("featured-projects")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    })
+  }
+
   const skills = [
     {
       icon: Code2,
@@ -162,10 +171,6 @@ export default function HomePage() {
                   <Mail className="h-4 w-4" />
                   mritunjaymohitesh@gmail.com
                 </a>
-                <a href="tel:+919540092315" className="flex items-center gap-2 hover:text-primary transition-colors">
-                  <Phone className="h-4 w-4" />
-                  +91 9540092315
-                </a>
                 <a
                   href="https://linkedin.com/in/mritunjay-mohitesh"
                   target="_blank"
@@ -179,7 +184,7 @@ export default function HomePage() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8 group">
+              <Button size="lg" className="text-lg px-8 group" onClick={scrollToProjects}>
                 View Projects
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -218,7 +223,11 @@ export default function HomePage() {
                     </div>
                     <Badge
                       variant="secondary"
-                      className="bg-accent/10 text-accent-foreground group-hover:bg-accent/20 transition-colors"
+                      className={`font-medium ${
+                        skill.level === "Expert"
+                          ? "bg-primary text-primary-foreground"
+                          : "bg-accent text-accent-foreground"
+                      } group-hover:scale-105 transition-all`}
                     >
                       {skill.level}
                     </Badge>
@@ -273,7 +282,7 @@ export default function HomePage() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-24 px-6">
+      <section id="featured-projects" className="py-24 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center space-y-4 mb-16">
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground">Featured Projects</h2>
@@ -286,7 +295,7 @@ export default function HomePage() {
             {projects.map((project, index) => (
               <Card
                 key={index}
-                className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-3 bg-card border-border/50 hover:border-primary/20 relative overflow-hidden"
+                className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-3 bg-card border-border/50 hover:border-primary/20 relative overflow-hidden flex flex-col"
               >
                 <div className="absolute top-4 right-4 z-10">
                   <Badge className="bg-primary/10 text-primary border-primary/20">{project.highlight}</Badge>
@@ -298,7 +307,7 @@ export default function HomePage() {
                   </CardTitle>
                   <CardDescription className="text-base leading-relaxed">{project.description}</CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-6 relative">
+                <CardContent className="space-y-6 relative flex-1 flex flex-col">
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech, techIndex) => (
                       <Badge key={techIndex} variant="outline" className="text-sm group-hover:border-primary/30">
@@ -306,12 +315,14 @@ export default function HomePage() {
                       </Badge>
                     ))}
                   </div>
-                  <Link href={project.href}>
-                    <Button className="w-full group-hover:bg-primary/90 transition-all duration-300 group">
-                      View Case Study
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </Link>
+                  <div className="mt-auto">
+                    <Link href={project.href}>
+                      <Button className="w-full group-hover:bg-primary/90 transition-all duration-300 group">
+                        View Case Study
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </Link>
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -327,14 +338,24 @@ export default function HomePage() {
             <Card className="text-left max-w-3xl mx-auto">
               <CardHeader>
                 <div className="flex items-start justify-between">
-                  <div>
+                  <div className="flex-1">
                     <CardTitle className="text-2xl font-bold">Software Engineer</CardTitle>
                     <CardDescription className="text-lg text-primary font-semibold">
                       IBM India Software Labs
                     </CardDescription>
                     <p className="text-muted-foreground">Jan 2024 - Present</p>
                   </div>
-                  <Badge className="bg-primary/10 text-primary">Current</Badge>
+                  <div className="flex flex-col items-center gap-2 ml-4">
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-primary/20">
+                      <Image
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_5726.PNG-5eAtXzWt56EN3iOXj6HxfuID8Rnbq7.jpeg"
+                        alt="Mritunjay Mohitesh"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <Badge className="bg-primary/10 text-primary text-xs">Current</Badge>
+                  </div>
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
