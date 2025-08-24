@@ -185,6 +185,46 @@ export default function ObservatoryDashboardPage() {
         </div>
       </section>
 
+      {/* Action Buttons */}
+      <section className="py-8 px-6 border-b border-border">
+        <div className="container mx-auto max-w-4xl">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="text-lg px-8 hover:scale-105 transition-transform" asChild>
+              <Link href="https://github.com/morsdor/observatory-dashboard" target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="mr-2 h-5 w-5" />
+                View Live Dashboard
+              </Link>
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="text-lg px-8 bg-transparent hover:scale-105 transition-transform"
+              asChild
+            >
+              <Link href="https://github.com/morsdor/observatory-dashboard" target="_blank" rel="noopener noreferrer">
+                <Github className="mr-2 h-5 w-5" />
+                GitHub Repository
+              </Link>
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="text-lg px-8 bg-transparent hover:scale-105 transition-transform"
+              asChild
+            >
+              <Link
+                href="https://github.com/morsdor/observatory-dashboard/blob/master/design.md"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Database className="mr-2 h-5 w-5" />
+                Technical Design Document
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Video Demo Placeholder */}
       <section className="py-16 px-6 bg-muted/30">
         <div className="container mx-auto max-w-4xl">
@@ -400,46 +440,6 @@ export default function ObservatoryDashboardPage() {
                 </div>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Action Buttons */}
-      <section className="py-16 px-6 border-t border-border">
-        <div className="container mx-auto max-w-4xl">
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 hover:scale-105 transition-transform" asChild>
-              <Link href="https://github.com/morsdor/observatory-dashboard" target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="mr-2 h-5 w-5" />
-                View Live Dashboard
-              </Link>
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="text-lg px-8 bg-transparent hover:scale-105 transition-transform"
-              asChild
-            >
-              <Link href="https://github.com/morsdor/observatory-dashboard" target="_blank" rel="noopener noreferrer">
-                <Github className="mr-2 h-5 w-5" />
-                GitHub Repository
-              </Link>
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="text-lg px-8 bg-transparent hover:scale-105 transition-transform"
-              asChild
-            >
-              <Link
-                href="https://github.com/morsdor/observatory-dashboard/blob/master/design.md"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Database className="mr-2 h-5 w-5" />
-                Technical Design Document
-              </Link>
-            </Button>
           </div>
         </div>
       </section>

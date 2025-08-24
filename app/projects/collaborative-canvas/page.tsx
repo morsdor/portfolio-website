@@ -1,9 +1,8 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { ArrowLeft, ExternalLink, Play, Users, Zap, GitBranch, Layers } from 'lucide-react'
+import { ArrowLeft, ExternalLink, Play, Users, Zap, GitBranch, Layers } from "lucide-react"
 import Link from "next/link"
-import { MarkdownReader } from "@/components/markdown-reader"
 
 export default function CollaborativeCanvasPage() {
   const challenges = [
@@ -77,178 +76,6 @@ export default function CollaborativeCanvasPage() {
     },
   ]
 
-  const designDocument = `# Collaborative Canvas - Real-time Drawing Application
-
-## Project Overview
-A real-time collaborative drawing application using Next.js with Yjs for conflict-free collaborative editing. Features infinite canvas, shape manipulation, real-time synchronization, and uses Redux for local UI state while Yjs handles shared document state.
-
-## Technical Architecture
-
-### Core Technologies
-- **Next.js 15** with App Router for modern React features
-- **TypeScript** for comprehensive type safety
-- **Yjs** for Conflict-free Replicated Data Types (CRDT)
-- **Redux Toolkit** for local UI state management
-- **Canvas API** for high-performance shape rendering
-- **WebSocket** via y-websocket for real-time synchronization
-- **shadcn/ui** for consistent UI components
-
-### State Management Architecture
-
-#### Dual State System
-The application uses a sophisticated dual-state architecture that separates concerns between collaborative and local state:
-
-**Shared Document State (Yjs)**
-- Shape positions, dimensions, colors, and properties
-- Shape hierarchy and grouping relationships
-- Layer ordering and visibility states
-- Document metadata and settings
-- Collaborative undo/redo history
-
-**Local UI State (Redux)**
-- Tool selection and configuration
-- Viewport position and zoom level
-- Drag states and temporary interactions
-- UI panel states and preferences
-- Selection states and multi-selection
-
-#### CRDT Implementation
-Yjs provides conflict-free collaborative editing through:
-- **Automatic Conflict Resolution**: No manual merge conflicts
-- **Causal Consistency**: Operations maintain logical order
-- **Efficient Synchronization**: Only deltas are transmitted
-- **Offline Support**: Changes sync when connection restored
-
-## Real-time Collaboration Features
-
-### Multi-user Editing
-- **Simultaneous Editing**: Multiple users can edit without conflicts
-- **Real-time Cursors**: See other users' cursor positions and selections
-- **User Presence**: Visual indicators of active collaborators
-- **Collaborative Selection**: See what others have selected
-- **Live Updates**: Changes appear instantly across all clients
-
-### Conflict Resolution
-- **Automatic Merging**: Yjs handles all conflicts automatically
-- **Intention Preservation**: User intentions are maintained during merges
-- **Causal Ordering**: Operations are applied in logical order
-- **Rollback Protection**: No data loss during network issues
-
-### Advanced Collaboration
-- **Collaborative Undo/Redo**: Undo operations work across users
-- **Presence Awareness**: Track user activity and focus
-- **Permission System**: Control who can edit vs view
-- **Session Management**: Handle user joins/leaves gracefully
-
-## Canvas and Shape System
-
-### Infinite Canvas
-- **Viewport Management**: Smooth pan and zoom interactions
-- **Coordinate Systems**: Efficient world-to-screen transformations
-- **Culling**: Only render shapes in visible area
-- **Performance**: Maintain 60fps even with thousands of shapes
-
-### Shape Manipulation
-- **Multi-selection**: Select and manipulate multiple shapes
-- **Grouping**: Create hierarchical shape relationships
-- **Transform Handles**: Resize, rotate, and move shapes
-- **Snapping**: Align shapes with guides and grids
-- **Layering**: Z-index management with drag reordering
-
-### Shape Types
-- **Basic Shapes**: Rectangles, circles, lines, polygons
-- **Text Objects**: Rich text with formatting options
-- **Images**: Raster image support with transformations
-- **Custom Shapes**: Extensible shape system for new types
-
-## Performance Optimizations
-
-### Rendering Performance
-- **Canvas Optimization**: Direct Canvas API for maximum speed
-- **Dirty Rectangle**: Only redraw changed areas
-- **Object Pooling**: Reuse shape instances to reduce GC
-- **RAF Scheduling**: Smooth animations with requestAnimationFrame
-
-### Memory Management
-- **Efficient Data Structures**: Optimized shape storage
-- **Garbage Collection**: Proper cleanup of removed shapes
-- **Memory Monitoring**: Track usage and optimize automatically
-- **Lazy Loading**: Load shape data only when needed
-
-### Network Optimization
-- **Delta Synchronization**: Only send changes, not full state
-- **Compression**: Efficient encoding of shape data
-- **Batching**: Group multiple operations for efficiency
-- **Reconnection**: Automatic recovery from network issues
-
-## Challenges and Solutions
-
-### Challenge 1: State Synchronization
-**Problem**: Keeping collaborative and local state in sync without conflicts
-**Solution**: Clear separation of concerns with Yjs for shared state and Redux for local UI state
-
-### Challenge 2: Performance with Collaboration
-**Problem**: Maintaining smooth interactions while synchronizing changes
-**Solution**: Optimistic updates with rollback capability and efficient delta synchronization
-
-### Challenge 3: Complex Interactions
-**Problem**: Multi-selection, grouping, and collaborative undo/redo complexity
-**Solution**: Sophisticated event system with proper state isolation per user
-
-### Challenge 4: Conflict-free Editing
-**Problem**: Multiple users editing the same shapes simultaneously
-**Solution**: Yjs CRDT automatically resolves conflicts while preserving user intentions
-
-## Advanced Features
-
-### Collaborative Tools
-- **Real-time Multi-user Editing**: Simultaneous editing without conflicts
-- **User Presence Indicators**: See who's online and where they're working
-- **Collaborative Cursors**: Real-time cursor tracking across users
-- **Shared Undo/Redo**: Undo operations work across all collaborators
-- **Permission Management**: Control edit/view access per user
-
-### Canvas Features
-- **Infinite Canvas**: Unlimited workspace with smooth navigation
-- **Shape Manipulation**: Move, resize, rotate with visual handles
-- **Multi-selection**: Select and manipulate multiple objects
-- **Grouping System**: Create hierarchical shape relationships
-- **Layer Management**: Z-index control with drag reordering
-
-### Performance Features
-- **60fps Rendering**: Smooth interactions even with complex scenes
-- **Memory Efficient**: Optimized for long collaborative sessions
-- **Network Resilient**: Automatic reconnection and sync recovery
-- **Offline Support**: Continue working during network interruptions
-
-## Testing Strategy
-
-### Collaboration Testing
-- **Multi-user Scenarios**: Test with multiple simultaneous users
-- **Network Simulation**: Test with poor connectivity and interruptions
-- **Conflict Resolution**: Verify automatic conflict handling
-- **Data Integrity**: Ensure no data loss during collaboration
-
-### Performance Testing
-- **Load Testing**: Test with thousands of shapes and multiple users
-- **Memory Profiling**: Monitor for leaks during extended sessions
-- **Rendering Benchmarks**: Maintain 60fps under various conditions
-- **Network Efficiency**: Measure bandwidth usage and optimization
-
-## Future Enhancements
-
-### Planned Features
-- **Voice/Video Chat**: Integrated communication for collaborators
-- **Version History**: Timeline of document changes with restore points
-- **Templates**: Pre-built canvas templates for common use cases
-- **Export Options**: PDF, SVG, and image export functionality
-
-### Technical Improvements
-- **WebGL Rendering**: Hardware acceleration for complex scenes
-- **Operational Transform**: Additional conflict resolution strategies
-- **Mobile Optimization**: Touch-optimized interactions for tablets
-- **Plugin System**: Extensible architecture for custom tools`
-
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -273,6 +100,28 @@ Yjs provides conflict-free collaborative editing through:
                 </Badge>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Action Buttons */}
+      <section className="py-8 px-6 border-b border-border">
+        <div className="container mx-auto max-w-4xl">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="text-lg px-8">
+              <ExternalLink className="mr-2 h-5 w-5" />
+              Try Live Collaboration
+            </Button>
+            <Button variant="outline" size="lg" className="text-lg px-8 bg-transparent">
+              <GitBranch className="mr-2 h-5 w-5" />
+              View Architecture Docs
+            </Button>
+            <Button variant="outline" size="lg" className="text-lg px-8 bg-transparent" asChild>
+              <Link href="/projects/collaborative-canvas/design">
+                <GitBranch className="mr-2 h-5 w-5" />
+                View Design Document
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -403,28 +252,6 @@ Yjs provides conflict-free collaborative editing through:
                 <div className="text-muted-foreground">Concurrent users tested</div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Action Buttons */}
-      <section className="py-16 px-6 border-t border-border">
-        <div className="container mx-auto max-w-4xl">
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8">
-              <ExternalLink className="mr-2 h-5 w-5" />
-              Try Live Collaboration
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 bg-transparent">
-              <GitBranch className="mr-2 h-5 w-5" />
-              View Architecture Docs
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 bg-transparent" asChild>
-              <Link href="/projects/collaborative-canvas/design">
-                <GitBranch className="mr-2 h-5 w-5" />
-                View Design Document
-              </Link>
-            </Button>
           </div>
         </div>
       </section>

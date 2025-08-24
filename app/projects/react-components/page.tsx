@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { ArrowLeft, ExternalLink, Play, Code2, Accessibility, Zap, Users } from 'lucide-react'
+import { ArrowLeft, ExternalLink, Play, Code2, Accessibility, Zap, Users } from "lucide-react"
 import Link from "next/link"
 
 export default function ReactComponentsPage() {
@@ -118,7 +118,12 @@ A comprehensive React component library showcasing 14 advanced components includ
 
 ### Challenge 3: Component Reusability
 **Problem**: Components needed to work in various contexts without code duplication
-**Solution**: Created flexible prop interfaces and compound component patterns`
+**Solution**: Created flexible prop interfaces, compound component patterns, and a unified styling system
+
+### Challenge 4: Developer Experience
+**Problem**: Ensuring components are easy to use and integrate for other developers
+**Solution**: Comprehensive TypeScript types, clear documentation, and intuitive API design
+`
 
   const challenges = [
     {
@@ -201,6 +206,40 @@ A comprehensive React component library showcasing 14 advanced components includ
                 </Badge>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Action Buttons */}
+      <section className="py-8 px-6 border-b border-border">
+        <div className="container mx-auto max-w-4xl">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="text-lg px-8" asChild>
+              <Link
+                href="https://v0-react-portfolio-application-jet.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ExternalLink className="mr-2 h-5 w-5" />
+                View Live Demo
+              </Link>
+            </Button>
+            <Button variant="outline" size="lg" className="text-lg px-8 bg-transparent" asChild>
+              <Link href="https://github.com/morsdor/react-components" target="_blank" rel="noopener noreferrer">
+                <Code2 className="mr-2 h-5 w-5" />
+                View Source Code
+              </Link>
+            </Button>
+            <Button variant="outline" size="lg" className="text-lg px-8 bg-transparent" asChild>
+              <Link
+                href="https://github.com/morsdor/react-components/blob/main/design.md"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Code2 className="mr-2 h-5 w-5" />
+                View Design Document
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -310,32 +349,6 @@ A comprehensive React component library showcasing 14 advanced components includ
                 <div className="text-muted-foreground">Production-ready components</div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Action Buttons */}
-      <section className="py-16 px-6 border-t border-border">
-        <div className="container mx-auto max-w-4xl">
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8" asChild>
-              <Link href="https://github.com/morsdor/react-components" target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="mr-2 h-5 w-5" />
-                View Live Demo
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 bg-transparent" asChild>
-              <Link href="https://github.com/morsdor/react-components" target="_blank" rel="noopener noreferrer">
-                <Code2 className="mr-2 h-5 w-5" />
-                View Source Code
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 bg-transparent" asChild>
-              <Link href="https://github.com/morsdor/react-components/blob/main/design.md" target="_blank" rel="noopener noreferrer">
-                <Code2 className="mr-2 h-5 w-5" />
-                View Design Document
-              </Link>
-            </Button>
           </div>
         </div>
       </section>
